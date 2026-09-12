@@ -1,89 +1,88 @@
-<br clear="both">
+# CryptoCrafters
 
-<div align="center">
-  <img height="200" src="https://github.com/EdrianHernandez/CryptoCrafters/blob/main/icons/web-logo.png?raw=true"  />
-</div>
+An interactive educational gaming platform featuring Cryptogram and Crossword puzzles. CryptoCrafters blends a vanilla web frontend with robust Firebase integration to handle complex data structures, secure data architecture, and team collaboration workflows.
 
-###
+## Architecture Overview
 
-<h1 align="left">CryptoCrafters</h1>
+| Layer | Responsibility | Key Tech |
+| --- | --- | --- |
+| Frontend | Game interfaces, dashboard, contact forms | Vanilla HTML/CSS/JS |
+| Game Engine | Puzzle logic, validation, and interactivity | JavaScript (`crossword.js`, `cryptogram.js`) |
+| Storage/Backend | Real-time data handling and backend integration | Firebase (`firebase.js`), Node.js |
 
-###
+## Repository Layout
 
-<p align="left">Cryptocrafters is a website created by dedicated group of computer science students, blending education and fun through interactive cryptography game and crossword puzzle.</p>
+```text
+CryptoCraftersFinal/
+├── about.html                  # Project and team information UI
+├── about.css                   # Styling for the about page
+├── contact.html                # Contact and inquiry interface
+├── contact.css                 # Styling for contact page
+├── contact.js                  # Contact form submission logic
+├── crossword.html              # Crossword puzzle player UI
+├── crossword.css               # Crossword styling
+├── crossword.js                # Crossword game engine and validation
+├── cryptogram.html             # Cryptogram puzzle player UI
+├── cryptogram.css              # Cryptogram styling
+├── cryptogram.js               # Cryptogram game engine and cipher logic
+├── firebase.js                 # Firebase client SDK initialization and config
+├── home.html                   # Main landing dashboard
+├── home.css                    # Dashboard styling
+├── home.js                     # Dashboard routing and state logic
+├── icons/                      # Static assets (crypto-logo, keys, cube.gif, etc.)
+└── README.md
+Prerequisites
+Firebase project with Firestore/Realtime Database enabled.
 
-###
+Node.js 18+ (for local development server).
 
-<h2 align="left">Table of Content</h2>
+Modern web browser.
 
-###
+Frontend & Database Setup
+Populate Firebase config:
 
-<p align="left"><strong>1. Overview</strong></p>
+JavaScript
+// firebase.js
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+Serve locally (using Node.js serve or any static server):
 
-###
+Bash
+npx serve .
+Open http://localhost:3000/home.html in your browser to access the main dashboard and navigate to the games.
 
-<p align="left"><strong>2. Features</strong></p>
+Deployment
+Frontend (Firebase Hosting)
+Install Firebase CLI and log in:
 
-###
+Bash
+npm install -g firebase-tools
+firebase login
+Initialize and deploy:
 
-<p align="left"><strong>3. How to Play</strong></p>
+Bash
+firebase init hosting
+firebase deploy --only hosting
+Ensure your firebase.json maps the public directory to the folder containing your HTML files.
 
-###
+Useful Docs & Scripts
+crossword.js – Contains the core array structures and validation logic for the crossword game.
 
-<h2 align="left">Overview</h2>
+cryptogram.js – Handles the cipher generation and input matching for the cryptogram game.
 
-###
+firebase.js – Centralized connection point for all backend database integrations.
 
-<p align="left">CryptoCrafters aims to ignite users' curiosity about encryption by blending education with entertainment. Through engaging, game-based learning experiences like the Caesar cipher cryptogram and the crossword puzzle. By solving puzzles and deciphering codes, users encounter famous authors, and computer science related terms.</p>
+Project Status & Next Steps
+✅ Developed responsive home.html dashboard with direct routing to games.
 
-###
+✅ Built standalone Cryptogram and Crossword game engines using vanilla JavaScript.
 
-<h2 align="left">Features</h2>
+✅ Integrated Firebase for secure backend data management.
 
-<p align="left"><strong>Educational Content:</strong> Learn the basics of cryptography, including the history and applications of ciphers.</p>
-
-<h3 align="left">Interactive Games:</h3>
-
-<p align="left"><strong>Caesar Cipher Cryptogram:</strong> Solve puzzles by decoding encrypted text using a Caesar cipher.</p>
-
-<p align="left"><strong>Crossword:</strong> Test your knowledge of computer science terms and concepts.</p>
-
-<p align="left"><strong>User-Friendly Design:</strong> The website is designed with a clean and intuitive interface to provide a seamless user experience.</p>
-
-###
-
-<h2 align="left">How to Play</h2>
-
-###
-
-<h3 align="left">Caeser Cipher Cryptogram:</h3>
-
-###
-
-<p align="left">1. Each letter in the quote is replaced by a different letter using a Caesar cipher.</p>
-
-###
-
-<p align="left">2. Click on the white cells in the grid to start typing the word letters.</p>
-
-###
-
-<p align="left">3. Submit your answer to check if you got it right.</p>
-
-###
-
-<h3 align="left">Crossword:</h3>
-
-###
-
-<p align="left">1. Use the clues provided on the side to fill in the crossword grid.</p>
-
-###
-
-<p align="left">2. Click on the white cells in the grid to start typing the word letters.</p>
-
-###
-
-<p align="left">3. Check answers to see how well you're doing.</p>
-
-###
+🔜 Expand puzzle repository databases and implement user authentication for saving scores.
